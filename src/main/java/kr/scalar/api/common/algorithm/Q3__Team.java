@@ -47,8 +47,7 @@ public class Q3__Team {
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i].equals("김진영")) {
                     for (int j = 0; j < 3; j++) {
-                        s += arr[i + j * 5] + ","
-                        ;
+                        s += arr[i + j * 5] + ",";
                     }
                     if (i == 17) {
                         break;
@@ -104,34 +103,5 @@ public class Q3__Team {
             System.out.println(arr[i]+"("+resArr[i]+"), ");
         }
     }
-    static void quiz10(){
-
-    }
-    static void quiz11(){
-        System.out.println("01주사위");
-    }
-    static void quiz12(){
-        System.out.println("02가위바위보");
-    }
-    static void quiz13(){
-
-    }
-    static void quiz14(){
-
-    }
-    static void quiz15(){
-
-    }
-    static void quiz16(){
-
-    }
-    static void quiz17(){
-
-    }
-    static void quiz18(){
-
-    }
-    static void quiz19(){
-
-    }
+    
 }
