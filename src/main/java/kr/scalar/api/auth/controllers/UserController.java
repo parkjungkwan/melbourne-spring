@@ -38,7 +38,12 @@ public class UserController {
     public String logout() {
         return "";
     }
+    @PutMapping("/put")
+    public String put(@RequestBody User user) {
+        return service.put(user);
+    }
 
+    // Embeded Methods
     @GetMapping("/findAll")
     public List<User> findAll() {
         return service.findAll();
@@ -57,11 +62,6 @@ public class UserController {
     @GetMapping("/count")
     public long count() {
         return service.count();
-    }
-
-    @PutMapping("/put")
-    public String put(@RequestBody User user) {
-        return service.put(user);
     }
 
     @DeleteMapping("/delete")
