@@ -1,8 +1,8 @@
-package net.zerotodev.api.services;
+package kr.scalar.api.auth.services;
 
+import kr.scalar.api.auth.domains.User;
+import kr.scalar.api.auth.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
-import net.zerotodev.api.domains.User;
-import net.zerotodev.api.repositories.UserRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

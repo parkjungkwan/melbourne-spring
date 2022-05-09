@@ -1,4 +1,4 @@
-package net.zerotodev.api.domains;
+package kr.scalar.api.auth.domains;
 
 import lombok.Data;
 import org.springframework.stereotype.Component;

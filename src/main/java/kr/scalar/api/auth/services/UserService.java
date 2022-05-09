@@ -1,6 +1,6 @@
-package net.zerotodev.api.services;
+package kr.scalar.api.auth.services;
 
-import net.zerotodev.api.domains.User;
+import kr.scalar.api.auth.domains.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

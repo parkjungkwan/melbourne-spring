@@ -1,5 +1,4 @@
-package net.zerotodev.api.controllers;
-import com.fasterxml.jackson.databind.util.StdDateFormat;
+package kr.scalar.api.auth.controllers;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import java.text.SimpleDateFormat;

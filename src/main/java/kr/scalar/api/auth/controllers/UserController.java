@@ -1,10 +1,8 @@
-package net.zerotodev.api.controllers;
+package kr.scalar.api.auth.controllers;
 
 import lombok.RequiredArgsConstructor;
-import net.zerotodev.api.domains.User;
-import net.zerotodev.api.services.UserService;
-import net.zerotodev.api.services.UserServiceImpl;
-import org.springframework.data.domain.Example;
+import kr.scalar.api.auth.domains.User;
+import kr.scalar.api.auth.services.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

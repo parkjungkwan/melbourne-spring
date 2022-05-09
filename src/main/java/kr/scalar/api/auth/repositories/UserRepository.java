@@ -1,6 +1,6 @@
-package net.zerotodev.api.repositories;
+package kr.scalar.api.auth.repositories;
 
-import net.zerotodev.api.domains.User;
+import kr.scalar.api.auth.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

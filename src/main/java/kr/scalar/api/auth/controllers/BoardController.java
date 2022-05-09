@@ -1,4 +1,4 @@
-package net.zerotodev.api.controllers;
+package kr.scalar.api.auth.controllers;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
