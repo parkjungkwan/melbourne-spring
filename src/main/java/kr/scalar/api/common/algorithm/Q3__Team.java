@@ -103,5 +103,5 @@ public class Q3__Team {
             System.out.println(arr[i]+"("+resArr[i]+"), ");
         }
     }
-    
+
 }
