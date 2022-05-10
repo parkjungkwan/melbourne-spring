@@ -17,23 +17,7 @@ import java.util.Scanner;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
-@Data @AllArgsConstructor class Calculator{
 
-    private int num1;
-    private String opcode;
-    private int num2;
-    @Override public String toString(){
-
-        int res = 0;
-        switch (opcode){
-            case "+": res = num1 + num2; break;
-            case "-": res = num1 - num2; break;
-            case "*": res = num1 * num2; break;
-            case "/": res = num1 / num2; break;
-        }
-        return num1 + " "+opcode+" "+num2 +" = "+res;
-    }
-}
 public class Q1__Gugudan {
     public static void main(String[] args) { // 03소수 quiz03prime()
         Scanner scanner = new Scanner(System.in);
@@ -58,6 +42,23 @@ public class Q1__Gugudan {
             }
         }
     } // main
+    @Data @AllArgsConstructor static class Calculator{
+
+        private int num1;
+        private String opcode;
+        private int num2;
+        @Override public String toString(){
+
+            int res = 0;
+            switch (opcode){
+                case "+": res = num1 + num2; break;
+                case "-": res = num1 - num2; break;
+                case "*": res = num1 * num2; break;
+                case "/": res = num1 / num2; break;
+            }
+            return num1 + " "+opcode+" "+num2 +" = "+res;
+        }
+    }
     static void calc(){
         Scanner s = new Scanner(System.in);
         System.out.println("숫자1, 숫자2, 연산자");
@@ -172,7 +173,6 @@ public class Q1__Gugudan {
     }
     static void lotto(){
         System.out.println("06 로또");
-        Random rand = new Random();
         String res = "";
         int[] lotto = new int[6];
         for (int i = 0; i < 6; i++) {

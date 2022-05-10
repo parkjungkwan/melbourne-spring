@@ -44,9 +44,12 @@ public class MemberCRUD {
                     userid, name, password, profileImg, phone, email);
         }
     }
+    interface MemberService{
+        void register(Member member);
+    }
     @RequiredArgsConstructor
-    class MemberService{
+    class MemberServiceImpl implements MemberService{
         private final Map<String, Member> map;
-        void register(Member member){ map.put(member.getUserid(), member);}
+        @Override public void register(Member member){ map.put(member.getUserid(), member);}
     }
 }
