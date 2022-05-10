@@ -26,7 +26,7 @@ public class MemberCRUD {
         Scanner s = new Scanner(System.in);
         MemberService service = new MemberServiceImpl();
         while(true){
-            System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById");
+            System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById 9.clear");
             switch (s.next()){
                 case "0":return;
                 case "1":
@@ -38,7 +38,7 @@ public class MemberCRUD {
                             .profileImg("hong.jpg")
                             .build();
                     service.save(hong);
-                    Member kim = new Member.Builder("hong")
+                    Member kim = new Member.Builder("kim")
                             .email("kim@test.com")
                             .password("1")
                             .name("김유신")
@@ -60,8 +60,13 @@ public class MemberCRUD {
                 case "4":break;
                 case "5":break;
                 case "6":break;
-                case "7":break;
+                case "7":
+                    System.out.println("총 회원수: "+service.count()+" 명");
+                    break;
                 case "8":break;
+                case "9":
+                    service.clear();
+                    break;
                 default:break;
             }
         }
@@ -103,6 +108,7 @@ public class MemberCRUD {
         List<Member> findAll();
         int count();
         boolean existsById(String id);
+        void clear();
     }
 
     static class MemberServiceImpl implements MemberService{
@@ -151,6 +157,11 @@ public class MemberCRUD {
         @Override
         public boolean existsById(String id) {
             return map.containsKey(id);
+        }
+
+        @Override
+        public void clear() {
+            map.clear();
         }
     }
 }
