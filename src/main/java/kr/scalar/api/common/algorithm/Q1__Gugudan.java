@@ -22,9 +22,8 @@ public class Q1__Gugudan {
     public static void main(String[] args) { // 03소수 quiz03prime()
         Scanner scanner = new Scanner(System.in);
         while (true){
-            System.out.println("1계산기 2Bmi 3주사위 4가위바위보 5윤년 \n" +
-                    "6숫자추론 7로또 8예약 9입출금 10구구단 \n" +
-                    "11큰숫자게임 12야구");
+            System.out.println("1.계산기 2.Bmi 3.주사위 4.가위바위보 5.윤년 6.숫자추론 7.로또 8.예약 9.입출금 10.구구단 \n" +
+                    "11.큰숫자게임 12.야구");
             switch (scanner.next()){
                 case "1": calc(); break;
                 case "2": bmi(); break;
@@ -61,7 +60,7 @@ public class Q1__Gugudan {
     }
     static void calc(){
         Scanner s = new Scanner(System.in);
-        System.out.println("숫자1, 숫자2, 연산자");
+        System.out.println("숫자1, 연산자, 숫자2");
         System.out.println(new Calculator(s.nextInt(), s.next(), s.nextInt()));;
     }
     static void bmi(){
