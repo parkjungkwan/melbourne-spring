@@ -23,7 +23,7 @@ public class MemberCRUD {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         while(true){
-            System.out.println("0.exit 1.register 2.findById 3.findByName 4.memberList 5.count 6.update 7.remove");
+            System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByName 6.findAll 7.count 8.existsById");
             switch (s.next()){
                 case "0":return;
                 case "1":break;
@@ -45,11 +45,11 @@ public class MemberCRUD {
         }
     }
     interface MemberService{
-        void register(Member member);
+        void save(Member member);
     }
     @RequiredArgsConstructor
     class MemberServiceImpl implements MemberService{
         private final Map<String, Member> map;
-        @Override public void register(Member member){ map.put(member.getUserid(), member);}
+        @Override public void save(Member member){ map.put(member.getUserid(), member);}
     }
 }
