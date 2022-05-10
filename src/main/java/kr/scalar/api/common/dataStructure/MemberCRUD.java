@@ -2,6 +2,7 @@ package kr.scalar.api.common.dataStructure;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 import java.util.HashMap;
@@ -56,10 +57,18 @@ public class MemberCRUD {
                     service.save(you);
                     break;
                 case "2":break;
-                case "3":break;
-                case "4":break;
+                case "3":
+                    Member temp = new Member();
+                    temp.setUserid("kim");
+                    service.delete(temp);
+                    break;
+                case "4":
+
+                    break;
                 case "5":break;
-                case "6":break;
+                case "6":
+                    System.out.println("총 회원목록: "+service.findAll());
+                    break;
                 case "7":
                     System.out.println("총 회원수: "+service.count()+" 명");
                     break;
@@ -71,7 +80,7 @@ public class MemberCRUD {
             }
         }
     }
-    @Data
+    @Data @NoArgsConstructor
     static class Member{
         protected String userid, name, password, profileImg, phone, email;
 
@@ -134,7 +143,6 @@ public class MemberCRUD {
 
         @Override
         public Member findById(String id) {
-
             return map.get(id);
         }
 
@@ -146,7 +154,7 @@ public class MemberCRUD {
         @Override
         public List<Member> findAll() {
             //return (List<Member>)map.forEach();
-            return null;
+            return (List<Member>)map.values();
         }
 
         @Override
