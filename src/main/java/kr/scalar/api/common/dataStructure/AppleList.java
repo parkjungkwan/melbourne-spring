@@ -1,6 +1,6 @@
 package kr.scalar.api.common.dataStructure;
 
-import kr.scalar.api.common.lambda.Lambda;
+import static kr.scalar.api.common.lambda.Lambda.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,6 +27,7 @@ public class AppleList {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         AppleService service = new AppleServiceImpl();
+
         while(true){
             System.out.println("0.exit 1.save 2.update 3.delete 4.findById 5.findByOrigin 6.findAll 7.count 8.existsById 9.clear");
             switch (s.next()){
@@ -74,7 +75,8 @@ public class AppleList {
                     service.clear();
                     break;
                 case "10":
-                    System.out.println("사과 가격은 "+ Lambda.integer("1000"));
+                    System.out.println("사과 가격은 "+ integer("1000"));
+                    System.out.println("내가 만든 배열의 사이즈는 "+array(7));
                     break;
                 default:break;
             }
