@@ -1,5 +1,6 @@
 package kr.scalar.api.common.dataStructure;
 
+import kr.scalar.api.common.lambda.Lambda;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -7,6 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * packageName: kr.scalar.api.common.dataStructure
@@ -70,11 +73,15 @@ public class AppleList {
                 case "9":
                     service.clear();
                     break;
+                case "10":
+                    System.out.println("사과 가격은 "+ Lambda.integer("1000"));
+                    break;
                 default:break;
             }
         }
     }
-    @Data static class Apple{
+    @Data
+    public static class Apple{
         private String color, origin;
         private int price;
 
@@ -83,13 +90,13 @@ public class AppleList {
             this.origin = builder.origin;
             this.price = builder.price;
         }
-        @NoArgsConstructor static class Builder{
+        @NoArgsConstructor static public class Builder{
             private String color, origin;
             private int price;
             public Builder color(String color){this.color=color; return this;}
             public Builder origin(String origin){this.origin=origin; return this;}
             public Builder price(int price){this.price=price; return this;}
-            Apple build(){ return new Apple(this);}
+            public Apple build(){ return new Apple(this);}
         }
         @Override public String toString(){
             return String.format("[사과 스펙] origin: %s, color: %s, price: %d",
@@ -136,7 +143,10 @@ public class AppleList {
 
         @Override
         public List<Apple> findByOrigin(String origin) {
-            return filterApplesByOrigin(this.list, origin);
+            return list.stream()
+                    .filter(apple -> apple.getOrigin().equals(origin))
+                    .collect(Collectors.toList());
+
         }
 
         @Override
@@ -158,23 +168,5 @@ public class AppleList {
         public void clear() {
             list.clear();
         }
-    }
-    static List<Apple> filterApples(List<Apple> list, Predicate<Apple> p){
-        List<Apple> result = new ArrayList<>();
-        for(Apple apple: list){
-            if(p.test(apple)){
-                result.add(apple);
-            }
-        }
-        return result;
-    }
-    static List<Apple> filterApplesByOrigin(List<Apple> list, String origin){
-        List<Apple> result = new ArrayList<>();
-        for(Apple apple: list){
-            if(origin.equals(apple.getOrigin())){
-                result.add(apple);
-            }
-        }
-        return result;
     }
 }
