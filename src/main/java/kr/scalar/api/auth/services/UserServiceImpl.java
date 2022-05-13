@@ -2,6 +2,7 @@ package kr.scalar.api.auth.services;
 
 import kr.scalar.api.auth.domains.User;
 import kr.scalar.api.auth.repositories.UserRepository;
+import kr.scalar.api.common.dataStructure.Box;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,6 +27,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService{
     private final UserRepository repository;
+
 
     @Override
     public String login(User user) {
@@ -78,6 +80,15 @@ public class UserServiceImpl implements UserService{
     @Override
     public boolean existsById(String userid) {
         return repository.existsById(0L); // userid 타입이 다름
+    }
+
+    @Override
+    public List<User> findByUserName(String name) {
+        List<User> ls = repository.findAll();
+        Box<String, User> box = new Box<>();
+        // ls = box.findByUserName(ls, name);
+        // ls.stream().filter(...)
+        return null;
     }
 
 
