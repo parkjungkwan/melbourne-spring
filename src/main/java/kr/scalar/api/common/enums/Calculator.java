@@ -1,6 +1,7 @@
 package kr.scalar.api.common.enums;
 
 import lombok.RequiredArgsConstructor;
+import org.junit.jupiter.api.Test;
 
 import java.util.function.BiFunction;
 
@@ -17,12 +18,7 @@ import java.util.function.BiFunction;
  */
 
 public class Calculator {
-    public static void main(String[] args) {
-        System.out.println("+: "+Operation.PLUS.apply(7, 5));
-        System.out.println("-: "+Operation.MINUS.apply(7, 5));
-        System.out.println("*: "+Operation.MULTI.apply(7, 5));
-        System.out.println("/: "+Operation.DIVIDE.apply(7, 5));
-    }
+
     @RequiredArgsConstructor enum Operation{
         PLUS("+", (x, y)->(x + y)),
         MINUS("-", (x, y)->(x - y)),
@@ -34,5 +30,13 @@ public class Calculator {
         @Override public String toString() { return opcode;}
         public int apply(int a, int b){return f.apply(a, b);}
     }
+    @Test
+    void calculatorTest(){
+        System.out.println("+: "+Operation.PLUS.apply(7, 5));
+        System.out.println("-: "+Operation.MINUS.apply(7, 5));
+        System.out.println("*: "+Operation.MULTI.apply(7, 5));
+        System.out.println("/: "+Operation.DIVIDE.apply(7, 5));
+    }
+
 
 }
