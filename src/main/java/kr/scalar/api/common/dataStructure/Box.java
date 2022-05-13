@@ -27,6 +27,7 @@ public class Box<K, V> {
     public Box() {
         this.map = new HashMap<>();
     }
+    // 반드시 구현할 공통기능
     public void put(K k , V v){map.put(k , v);}
     public void replace(K k , V v){map.replace(k ,v);}
     public void remove(K k , V v){map.remove(k , v);}
@@ -34,19 +35,19 @@ public class Box<K, V> {
     public V get(String id){return map.get(id);}
     public int size(){return map.size();}
     public void clear(){map.clear();}
-    // 회원목록요청시
-    public List<User> findAllUserList() {
-        List<User> ls = new ArrayList<>();
+    // 테이블 행목록요청시
+    public List<V> findAllList() {
+        List<V> ls = new ArrayList<>();
         for (Map.Entry<K, V> e: map.entrySet()) {
-            ls.add((User)e.getValue());
+            ls.add((V)e.getValue());
         }
         return ls;
     }
-    // 회원 아이디 목록요청시
-    public List<User> findAllUserKeyList() {
-        List<User> ls = new ArrayList<>();
+    // 테이블 키값 목록요청시
+    public List<V> findAllKeyList() {
+        List<V> ls = new ArrayList<>();
         for (Map.Entry<K, V> e: map.entrySet()) {
-            ls.add((User)e.getValue());
+            ls.add((V)e.getValue());
         }
         return ls;
     }
