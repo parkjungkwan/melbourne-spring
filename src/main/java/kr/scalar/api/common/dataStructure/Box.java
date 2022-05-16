@@ -31,7 +31,7 @@ public class Box<K, V> {
     public void put(K k , V v){map.put(k , v);}
     public void replace(K k , V v){map.replace(k ,v);}
     public void remove(K k , V v){map.remove(k , v);}
-    public List<V> values(){return map.values().stream().collect(Collectors.toList());}
+    public List<V> values(){ return map.values().stream().collect(Collectors.toList());}
     public V get(String id){return map.get(id);}
     public int size(){return map.size();}
     public void clear(){map.clear();}

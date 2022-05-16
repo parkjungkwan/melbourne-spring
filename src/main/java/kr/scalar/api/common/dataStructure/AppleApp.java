@@ -1,13 +1,11 @@
 package kr.scalar.api.common.dataStructure;
 
-import static kr.scalar.api.common.lambda.Lambda.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 /**
@@ -144,18 +142,15 @@ public class AppleApp {
         System.out.println("### 5. findById ###");
         System.out.println("첫번째 사과정보:" +service.findById(0)); 
         System.out.println("### 6. update ###");
-        service.update(0, new Apple.Builder()
-                .origin("캘리포니아")
-                .color("YELLOW")
-                .price(20000)
-                .build());
+        Apple ca = new Apple.Builder()
+                .origin("풍기")
+                .color("RED")
+                .price(2000)
+                .build();
+        service.update(0, ca);
         System.out.println("수정된 사과정보:" +service.findById(0));
         System.out.println("### 7. delete ###");
-        service.delete(new Apple.Builder()
-                .origin("캘리포니아")
-                .color("YELLOW")
-                .price(20000)
-                .build());
+        service.delete(ca);
         System.out.println("삭제후 카운트 감소확인: "+service.countAll());
         System.out.println("### 8. clear ###");
         service.clear();

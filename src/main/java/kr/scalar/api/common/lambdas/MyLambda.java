@@ -1,4 +1,4 @@
-package kr.scalar.api.common.lambda;
+package kr.scalar.api.common.lambdas;
 
 /**
  * packageName: kr.scalar.api.common.lambda
