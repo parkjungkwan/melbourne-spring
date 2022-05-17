@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -45,16 +46,8 @@ public class PersonStream {
         }
     }
     // 기능: 회원검색
-    interface PersonService{Person search(List <Person> persons);}
-    public static class PersonServiceImpl implements PersonService{
-
-        @Override
-        public Person search(List <Person> persons) {
-            return persons
-                    .stream()
-                    .filter(e -> e.getName().equals("홍길동"))
-                    .collect(Collectors.toList()).get(0);
-        }
+    @FunctionalInterface interface PersonService{
+        Person search(List <Person> persons);
     }
 
     @Test
@@ -68,7 +61,12 @@ public class PersonStream {
                 Person.builder().name("김유신").ssn("970620-1").build(),
                 Person.builder().name("유관순").ssn("040920-4").build()
         );
-        System.out.println(new PersonServiceImpl().search(l));
+
+        PersonService ps = a -> a
+                .stream()
+                .filter(e -> e.getName().equals("홍길동"))
+                .collect(Collectors.toList()).get(0);
+        System.out.println(ps.search(l));
 
     }
 }
