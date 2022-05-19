@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  * DATE             AUTHOR              NOTE
  * ============================================
  * 2022-05-09      JeongmyoengHong     최초 생성
+ * 2022-05-19     Parkjungkwan          수정
  */
 @RestController
 @RequiredArgsConstructor
