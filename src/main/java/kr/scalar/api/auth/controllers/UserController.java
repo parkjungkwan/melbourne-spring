@@ -1,5 +1,6 @@
 package kr.scalar.api.auth.controllers;
 
+import kr.scalar.api.auth.services.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
 import kr.scalar.api.auth.domains.User;
 import kr.scalar.api.auth.services.UserService;
@@ -83,4 +84,6 @@ public class UserController {
     public boolean existsById(@PathVariable String userid) {
         return service.existsById(userid);
     }
+
+
 }

@@ -30,34 +30,20 @@ public class Gugudan {
             return result ;
         }
     }
-    @Getter @AllArgsConstructor @NoArgsConstructor @Builder
-    static class JinyoungSolution{
-        private String result;
-        private int num;
-        @Override
-        public String toString() {
-            return result;
-        }
-    }
     @FunctionalInterface interface ISolution{ Solution solution(Solution s);}
     @FunctionalInterface interface IMinseoGugudan{ void solution();}
-    @FunctionalInterface interface IJinyoungGugudan{ JinyoungSolution solution(JinyoungSolution s);}
-    @FunctionalInterface interface IHyungukSolution{ void solution();}
+    @FunctionalInterface interface IJinyoungGugudan{ Solution solution(Solution s);}
+    @FunctionalInterface interface IHyungukGugudan{ void solution();}
     static class Service{
         static IMinseoGugudan iMinseo = ()-> {
-            int i = 0, j = 0;
-            for ( i = 1; i < 10; i++) {
-                for ( j = 2; j < 6; j++) {
-                    System. out.print( j + "*" + i + "=" + i * j + "\t");
+            for (int dan = 2; dan < 10; dan += 4) { //구구단은 2단부터 시작.
+                for (int i = 1; i <= 9; i++) { // 1 ~ 9 까지 곱이 나오도록 조건잡기
+                    for (int j = dan; j < dan + 4; j++) {
+                        System.out.print(j + "*" + i + "=" + (j * i) + "\t");
+                    }
+                    System.out.print("\n"); // 4개씩 출력 되어야 하므로 j*i 값 4개가 출력된 후 엔터
                 }
-                System. out.println();
-            }
-            System. out.println();
-            for ( i = 1; i < 10; i++) {
-                for ( j = 6; j < 10; j++) {
-                    System. out.print( j + "*" + i + "=" + i * j + "\t");
-                }
-                System. out.println();
+                System.out.println("\n"); //4개의 단(2단~5단)이 모두 출력 된 후, 엔터
             }
         };
         static IJinyoungGugudan iJinyoung = e -> {
@@ -71,7 +57,7 @@ public class Gugudan {
                 }
                 result += '\n';
             }
-            return JinyoungSolution.builder().result(result).build();
+            return Solution.builder().result(result).build();
         };
         static ISolution iSolution = e ->{
             int[][] arr = new int[e.getNum()][e.getNum()];
@@ -85,7 +71,7 @@ public class Gugudan {
             }
             return Solution.builder().result(result).build();
         };
-        static IHyungukSolution iHyunguk = () ->{
+        static IHyungukGugudan iHyunguk = () ->{
             IntStream.rangeClosed(2,9).forEach(i->{
                 IntStream.rangeClosed(1,9).forEach(j->{
                     System.out.print(i + "*" + j + "=" + String.format("%2d",i * j));
@@ -102,7 +88,7 @@ public class Gugudan {
         // 이차원배열. 구구단 정렬 무시
         // System.out.println(Service.iSolution.solution(Solution.builder().num(19).build()));
         // 책받침 구구단 
-        // System.out.println(Service.iJinyoung.solution(JinyoungSolution.builder().num(19).build()));
+        // System.out.println(Service.iJinyoung.solution(Solution.builder().num(19).build()));
         // 람다 구구단
         Service.iHyunguk.solution();
     }

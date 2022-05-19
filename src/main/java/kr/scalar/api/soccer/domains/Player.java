@@ -1,6 +1,6 @@
 package kr.scalar.api.soccer.domains;
 
-import lombok.Data;
+import lombok.*;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -16,16 +16,19 @@ import javax.persistence.*;
  * ============================================
  * 2022-05-09      JeongmyoengHong     최초 생성
  */
-@Data
+@Builder
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Component
 @Entity
 @Table(name = "players")
 public class Player {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) private long id;
-    @Column(nullable = false) private String playerid;
+    @Column(name = "player_no")
+    @GeneratedValue(strategy = GenerationType.IDENTITY) private long playerNo;
+    @Column(nullable = false) private String playerId;
     @Column(nullable = false) private String playerName;
-    private String teamid;
     private String ePlayerName;
     private String nickname;
     private String joinYyyy;
@@ -36,4 +39,9 @@ public class Player {
     private String solar;
     private String height;
     private String weight;
+
+    @ManyToOne
+    @JoinColumn(name = "team_id")
+    private Team team;
+
 }
