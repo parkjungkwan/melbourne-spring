@@ -34,7 +34,7 @@ public class Team {
     private String regionName;
     private String teamName;
     private String eTeamName;
-    private String orig;
+    private String origYyyy;
     private String zipCode1;
     private String zipCode2;
     private String address;

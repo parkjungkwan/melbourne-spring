@@ -39,9 +39,10 @@ public class Player {
     private String solar;
     private String height;
     private String weight;
+    private String teamId;
 
     @ManyToOne
-    @JoinColumn(name = "team_id")
+    @JoinColumn(name = "team_no")
     private Team team;
 
 }
