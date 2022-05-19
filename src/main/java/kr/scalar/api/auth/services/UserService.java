@@ -32,7 +32,7 @@ public interface UserService {
 
     long count();
 
-    String put(User user);
+    String update(User user);
 
     String delete(User user);
 

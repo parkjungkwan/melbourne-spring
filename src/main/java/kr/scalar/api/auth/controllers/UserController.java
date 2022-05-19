@@ -38,9 +38,9 @@ public class UserController {
     public String logout() {
         return "";
     }
-    @PutMapping("/put")
-    public String put(@RequestBody User user) {
-        return service.put(user);
+    @PutMapping("/update")
+    public String update(@RequestBody User user) {
+        return service.update(user);
     }
 
     // Embeded Methods

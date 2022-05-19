@@ -1,5 +1,11 @@
 package kr.scalar.api.common.algorithm;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.junit.jupiter.api.Test;
+
 /**
  * packageName: kr.scalar.api.common.algorithm
  * fileName   : CheckSameArray
@@ -12,4 +18,22 @@ package kr.scalar.api.common.algorithm;
  * 2022-05-17   parkjungkwan  최초 생성
  */
 public class CheckSameArray {
+    @Builder
+    @Getter
+    @AllArgsConstructor
+    @NoArgsConstructor
+    static class Solution{
+        private String result;
+
+        @Override
+        public String toString() {
+            return String.format("A배열과 B배열은 %s 배열입니다",
+                    result);
+        }
+    }
+    @FunctionalInterface interface ISolution{
+        Solution solution(Solution s);
+    }
+    @Test
+    void test(){}
 }

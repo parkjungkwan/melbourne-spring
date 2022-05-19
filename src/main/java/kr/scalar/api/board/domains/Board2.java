@@ -11,5 +11,5 @@ package kr.scalar.api.board.domains;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
-public class Board {
+public class Board2 {
 }

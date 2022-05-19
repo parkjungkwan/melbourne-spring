@@ -29,6 +29,7 @@ public class Vector<T> {
     }
 
     public void add(T t){list.add(t);}
+    public void insert(T t, int i){list.add(i, t);}
     public void set(int i,T t){list.set(i, t);}
     public void remove(T t){list.remove(t);}
     public ArrayList<T> get(){return list;}

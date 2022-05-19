@@ -17,11 +17,11 @@ import javax.persistence.Id;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
-@Component
-@Entity
-@Data
-public class Article {
-    @Id Long id;
+//@Component
+//@Entity
+//@Data
+public class Article2 {
+//    @Id Long id;
     private String projects;
     private String startDate;
     private String status;
