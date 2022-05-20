@@ -1,7 +1,9 @@
 package kr.scalar.api.soccer.repositories;
 import kr.scalar.api.soccer.domains.Player;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -19,6 +21,7 @@ import java.util.List;
  */
 interface PlayerCustomRepository{
     // 선수들의 키와 몸무게를 변경하시오
+    @Modifying
     @Query(value="")
     int update();
 
@@ -30,7 +33,7 @@ interface PlayerCustomRepository{
     // 단 수원팀 ID는 K02 입니다.
     @Query(value = "select p.playerName \n"
     + "from Player p \n"
-    + "where p.teamId like :teamId and p.position like :teamId")
+    + "where p.teamId like :teamId and p.position like :teamId%")
     List<String> findTeamGKByTeamId();
 
     // 005. 수원팀에서 성이 고씨이고 키가 170 이상인 선수를 출력하시오.
@@ -38,9 +41,9 @@ interface PlayerCustomRepository{
     @Query(value = "select p.playerName \n"
     + "from Player p \n"
     + "where p.teamId like :teamId \n"
-    + "and p.playerName like :familyName \n"
-    + "and p.height >= :height")
-    List<Player> findPlayers(String teamId, String familyName, String height);
+    + "and p.playerName like :#{#paramPlayer.familyName} \n"
+    + "and p.height >= :#{#paramPlayer.height}")
+    List<Player> findPlayers(@Param(value = "paramPlayer") Player player, @Param(value = "paramPlayer") String teamId);
 
 
 }
