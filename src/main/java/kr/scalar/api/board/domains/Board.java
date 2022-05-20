@@ -1,4 +1,4 @@
-package kr.scalar.api.auth.domains;
+package kr.scalar.api.board.domains;
 
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
