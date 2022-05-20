@@ -17,6 +17,7 @@ import org.springframework.stereotype.Repository;
  */
 
 interface ArticleCustomRepository{
+    // 000. title 과 content 를 수정하시오
     Article update(Article article);
 }
 

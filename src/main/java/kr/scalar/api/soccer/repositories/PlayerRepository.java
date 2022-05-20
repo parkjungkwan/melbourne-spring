@@ -13,6 +13,10 @@ import org.springframework.stereotype.Repository;
  * ============================================
  * 2022-05-09      JeongmyoengHong     최초 생성
  */
+interface PlayerCustomRepository{
+    // 선수들의 키와 몸무게를 변경하시오
+}
+
 @Repository
 public interface PlayerRepository extends JpaRepository<Player, Long> {
 }

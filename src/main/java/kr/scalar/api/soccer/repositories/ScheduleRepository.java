@@ -15,6 +15,9 @@ import org.springframework.stereotype.Repository;
  * ============================================
  * 2022-05-09      JeongmyoengHong     최초 생성
  */
+interface ScheduleCustomRepository{
+    // 스케줄 날짜만 수정이 되도록 하시오
+}
 @Repository
 public interface ScheduleRepository extends JpaRepository<Schedule, Long> {
 }

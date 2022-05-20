@@ -16,6 +16,9 @@ import org.springframework.stereotype.Repository;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
+interface BoardCustomRepository{
+    // 000. 게시판 이름 boardName 을 변경하시오
+}
 @Repository
 public interface BoardRepository extends JpaRepository<Board,Long>{
 }
