@@ -23,7 +23,7 @@ interface TeamCustomRepository{
     // 000. 팀의 전화번호와 팩스번호를 수정하시오
     @Query(value="update team t set t.tel = :tel, t.fax = :fax where t.teamNo = :teamNo",
             nativeQuery = true)
-    int update(@Param("tel") String tel, @Param("fax") String fax);
+    int update(@Param("tel") String tel, @Param("fax") String fax, @Param("teamNo") String teamNo);
     
     // 001. 전체 축구팀 목록을 팀이름 오름차순으로 출력하시오
     @Query(value="select t.teamName as teamName from team t order by t.teamName",
