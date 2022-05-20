@@ -24,7 +24,7 @@ import java.util.Optional;
  */
 @RequiredArgsConstructor
 @RestController
-@RequestMapping("/board")
+@RequestMapping("/boards")
 public class BoardController {
     private final BoardService service;
 

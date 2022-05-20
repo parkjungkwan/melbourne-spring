@@ -15,6 +15,11 @@ import org.springframework.stereotype.Repository;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
+
+interface ArticleCustomRepository{
+    Article update(Article article);
+}
+
 @Repository
 public interface ArticleRepository extends JpaRepository<Article, Long> {
 }
