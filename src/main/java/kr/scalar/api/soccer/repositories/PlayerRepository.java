@@ -40,12 +40,10 @@ interface PlayerCustomRepository{
     // 단 수원팀 ID는 K02 입니다.
     @Query(value = "select p.playerName \n"
     + "from Player p \n"
-    + "where p.teamId like :teamId \n"
+    + "where p.teamId like :#{#paramPlayer.teamId} \n"
     + "and p.playerName like :#{#paramPlayer.familyName} \n"
     + "and p.height >= :#{#paramPlayer.height}")
-    List<Player> findPlayers(@Param(value = "paramPlayer") Player player, @Param(value = "paramPlayer") String teamId);
-
-
+    List<Player> findPlayers(@Param(value = "paramPlayer") Player player);
 }
 
 @Repository
