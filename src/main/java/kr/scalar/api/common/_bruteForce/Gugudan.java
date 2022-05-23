@@ -1,4 +1,4 @@
-package kr.scalar.api.common.algorithm;
+package kr.scalar.api.common._bruteForce;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.stream.IntStream;
 
 /**

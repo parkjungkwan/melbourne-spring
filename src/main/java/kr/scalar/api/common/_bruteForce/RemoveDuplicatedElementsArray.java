@@ -1,4 +1,4 @@
-package kr.scalar.api.common.algorithm;
+package kr.scalar.api.common._bruteForce;
 
 /**
  * packageName: kr.scalar.api.common.algorithm

@@ -1,4 +1,4 @@
-package kr.scalar.api.common.algorithm;
+package kr.scalar.api.common._bruteForce;
 import java.util.Scanner;
 /**
  * packageName: kr.scalar.api.common.algo01
@@ -11,7 +11,7 @@ import java.util.Scanner;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
-public class Q3__Team {
+public class TeamInfo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true){

@@ -1,4 +1,4 @@
-package kr.scalar.api.common.algorithm;
+package kr.scalar.api.common._bruteForce;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 /**
  * packageName: kr.scalar.api.common.algorithm
- * fileName   : CheckSameArray
+ * fileName   : Frutes
  * author     : parkjungkwan
  * date       : 2022-05-17
  * desc       :
@@ -17,18 +17,15 @@ import org.junit.jupiter.api.Test;
  * ================================
  * 2022-05-17   parkjungkwan  최초 생성
  */
-public class CheckSameArray {
-    @Builder
-    @Getter
-    @AllArgsConstructor
-    @NoArgsConstructor
+public class Fruits{
+    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     static class Solution{
-        private String result;
+        private int total, apple, grape, orange;
 
         @Override
         public String toString() {
-            return String.format("A배열과 B배열은 %s 배열입니다",
-                    result);
+            return String.format("total: %d, apple: %d, grape: %d, orange: %d",
+                    total, apple, grape, orange);
         }
     }
     @FunctionalInterface interface ISolution{

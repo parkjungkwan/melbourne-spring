@@ -1,16 +1,10 @@
-package kr.scalar.api.common.algorithm;
+package kr.scalar.api.common._greedy;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.function.Function;
-import java.util.stream.Collectors;
 
 /**
  * packageName: kr.scalar.api.common.algorithm
