@@ -49,5 +49,5 @@ package kr.scalar.api.common._greedy;
  * ================================
  * 2022-05-23   parkjungkwan  최초 생성
  */
-public class Booking {
+public class 회의실배정 {
 }

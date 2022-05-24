@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * ================================
  * 2022-05-17   parkjungkwan  최초 생성
  */
-public class MaxMin {
+public class 최대최소값 {
     @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     private static class Solution{
         private int[] arr;

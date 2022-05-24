@@ -2,7 +2,7 @@ package kr.scalar.api.common._sort;
 
 /**
  * packageName: kr.scalar.api.common._sort
- * fileName   : InsertionSort
+ * fileName   : Zigzag
  * author     : parkjungkwan
  * date       : 2022-05-23
  * desc       :
@@ -11,5 +11,5 @@ package kr.scalar.api.common._sort;
  * ================================
  * 2022-05-23   parkjungkwan  최초 생성
  */
-public class InsertionSort {
+public class 지그재그 {
 }

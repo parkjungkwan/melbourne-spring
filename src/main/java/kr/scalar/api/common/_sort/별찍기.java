@@ -102,5 +102,5 @@ package kr.scalar.api.common._sort;
  * ================================
  * 2022-05-23   parkjungkwan  최초 생성
  */
-public class StarPrint {
+public class 별찍기 {
 }

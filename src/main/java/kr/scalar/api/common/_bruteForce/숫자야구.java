@@ -58,5 +58,5 @@ package kr.scalar.api.common._bruteForce;
  * ================================
  * 2022-05-23   parkjungkwan  최초 생성
  */
-public class Baseball {
+public class 숫자야구 {
 }

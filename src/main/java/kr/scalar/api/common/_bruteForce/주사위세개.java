@@ -27,5 +27,5 @@ package kr.scalar.api.common._bruteForce;
  * ================================
  * 2022-05-23   parkjungkwan  최초 생성
  */
-public class Dice {
+public class 주사위세개 {
 }
