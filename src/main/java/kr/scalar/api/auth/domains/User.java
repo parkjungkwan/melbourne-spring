@@ -39,4 +39,6 @@ public class  User {
 
     @OneToMany(mappedBy = "u")
     List<Article> a = new ArrayList<>();
+    @ElementCollection(fetch = FetchType.EAGER)
+    public List<Role> roles;
 }
