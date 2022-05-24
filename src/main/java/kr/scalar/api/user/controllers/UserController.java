@@ -1,9 +1,8 @@
-package kr.scalar.api.auth.controllers;
+package kr.scalar.api.user.controllers;
 
-import kr.scalar.api.auth.services.UserServiceImpl;
 import lombok.RequiredArgsConstructor;
-import kr.scalar.api.auth.domains.User;
-import kr.scalar.api.auth.services.UserService;
+import kr.scalar.api.user.domains.User;
+import kr.scalar.api.user.services.UserService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

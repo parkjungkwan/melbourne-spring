@@ -1,12 +1,11 @@
 package kr.scalar.api.board.domains;
 
 import com.sun.istack.NotNull;
-import kr.scalar.api.auth.domains.User;
+import kr.scalar.api.user.domains.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;

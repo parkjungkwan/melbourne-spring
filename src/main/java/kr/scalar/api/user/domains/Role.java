@@ -1,4 +1,4 @@
-package kr.scalar.api.auth.domains;
+package kr.scalar.api.user.domains;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

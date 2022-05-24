@@ -3,7 +3,7 @@ package kr.scalar.api.common.dataStructure;
 import lombok.Data;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
-import kr.scalar.api.auth.domains.User;
+import kr.scalar.api.user.domains.User;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;

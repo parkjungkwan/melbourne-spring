@@ -1,7 +1,7 @@
-package kr.scalar.api.security.domains;
+package kr.scalar.api.auth.domains;
 
-import kr.scalar.api.auth.domains.Role;
-import kr.scalar.api.security.services.UserDetailsServiceImpl;
+import kr.scalar.api.user.domains.Role;
+import kr.scalar.api.auth.services.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;
@@ -28,9 +28,9 @@ import java.util.List;
 @Log
 @Component
 @RequiredArgsConstructor
-public class SecurityProvider implements AuthenticationProvider {
+public class AuthProvider implements AuthenticationProvider {
 
-    private final UserDetailsServiceImpl service;
+    private final AuthServiceImpl service;
 
     @Value("${security.jwt.token.security-key:secret-key}")
     private String securityKey;

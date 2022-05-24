@@ -1,6 +1,6 @@
-package kr.scalar.api.auth.repositories;
+package kr.scalar.api.user.repositories;
 
-import kr.scalar.api.auth.domains.User;
+import kr.scalar.api.user.domains.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

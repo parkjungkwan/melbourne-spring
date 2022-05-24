@@ -1,8 +1,7 @@
-package kr.scalar.api.security.domains;
+package kr.scalar.api.auth.domains;
 
 import lombok.Builder;
 import lombok.Getter;
-import org.springframework.stereotype.Component;
 
 /**
  * packageName: kr.scalar.api.security.domains
