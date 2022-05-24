@@ -11,7 +11,7 @@ import java.util.Scanner;
  * ================================
  * 2022-05-09   parkjungkwan  최초 생성
  */
-public class TeamInfo {
+public class 팀과제 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         while (true){

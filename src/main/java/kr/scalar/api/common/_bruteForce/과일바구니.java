@@ -17,7 +17,7 @@ import org.junit.jupiter.api.Test;
  * ================================
  * 2022-05-17   parkjungkwan  최초 생성
  */
-public class Fruits{
+public class 과일바구니 {
     @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     static class Solution{
         private int total, apple, grape, orange;

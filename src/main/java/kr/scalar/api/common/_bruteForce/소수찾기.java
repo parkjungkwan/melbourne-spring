@@ -6,9 +6,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 /**
  * packageName: kr.scalar.api.common.algorithm
- * fileName   : CheckSameArray
+ * fileName   : PrimeNumber
  * author     : parkjungkwan
  * date       : 2022-05-17
  * desc       :
@@ -17,23 +19,17 @@ import org.junit.jupiter.api.Test;
  * ================================
  * 2022-05-17   parkjungkwan  최초 생성
  */
-public class CheckSameArray {
-    @Builder
-    @Getter
-    @AllArgsConstructor
-    @NoArgsConstructor
+public class 소수찾기 {
+    @Builder @Getter @AllArgsConstructor @NoArgsConstructor
     static class Solution{
-        private String result;
+        int start, end;
+        List<Integer> primes;
 
-        @Override
-        public String toString() {
-            return String.format("A배열과 B배열은 %s 배열입니다",
-                    result);
-        }
     }
-    @FunctionalInterface interface ISolution{
-        Solution solution(Solution s);
-    }
+    @FunctionalInterface static interface SolutionService{ Solution solution(Solution solution);}
+
     @Test
-    void test(){}
+    void solution(){
+
+    }
 }
