@@ -24,10 +24,10 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Component
+
 @Entity
 @Table(name="users")
-public class User {
+public class  User {
     @Id
     @Column(name = "user_id")
     @GeneratedValue private long userId;
