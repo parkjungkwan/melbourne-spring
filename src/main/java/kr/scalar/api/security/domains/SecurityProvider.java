@@ -1,6 +1,7 @@
 package kr.scalar.api.security.domains;
 
 import kr.scalar.api.auth.domains.Role;
+import kr.scalar.api.security.services.UserDetailsServiceImpl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Value;

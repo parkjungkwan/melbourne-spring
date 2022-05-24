@@ -41,41 +41,21 @@ public class UserDetailsImpl implements UserDetails {
         return new UserDetailsImpl(user.getUserId(), user.getUsername(), user.getPassword(),
                 user.getName(), user.getEmail(), authorities);
     }
-
     private final Collection<? extends GrantedAuthority> authorities;
-
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public String getPassword() {
-        return null;
-    }
-
-    @Override
-    public String getUsername() {
-        return null;
-    }
-
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
-
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
-
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
-
     @Override
     public boolean isEnabled() {
-        return false;
+        return true;
     }
 }
