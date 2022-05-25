@@ -13,4 +13,3 @@ package kr.scalar.api.common._greedy;
  */
 public class 체육복{
 }
-트

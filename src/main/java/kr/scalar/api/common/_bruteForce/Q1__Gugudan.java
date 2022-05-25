@@ -20,122 +20,12 @@ import java.util.Scanner;
 
 public class Q1__Gugudan {
     public static void main(String[] args) { // 03소수 quiz03prime()
-        Scanner scanner = new Scanner(System.in);
-        while (true){
-            System.out.println("1.계산기 2.Bmi 3.주사위 4.가위바위보 5.윤년 6.숫자추론 7.로또 8.예약 9.입출금 10.구구단 \n" +
-                    "11.큰숫자게임 12.야구");
-            switch (scanner.next()){
-                case "1": calc(); break;
-                case "2": bmi(); break;
-                case "3": dice(); break;
-                case "4": rps(); break;
-                case "5": leap(); break;
-                case "6": guess(); break;
-                case "7": lotto(); break;
-                case "8": booking(scanner); break;
-                case "9": bank(scanner); break;
-                case "10": gugudan(); break;
-                case "11": playNumberGameWithComputer(); break;
-                case "12": baseball(scanner); break;
-                default:return;
-            }
-        }
+
     } // main
-    @Data @AllArgsConstructor static class Calculator{
 
-        private int num1;
-        private String opcode;
-        private int num2;
-        @Override public String toString(){
 
-            int res = 0;
-            switch (opcode){
-                case "+": res = num1 + num2; break;
-                case "-": res = num1 - num2; break;
-                case "*": res = num1 * num2; break;
-                case "/": res = num1 / num2; break;
-            }
-            return num1 + " "+opcode+" "+num2 +" = "+res;
-        }
-    }
-    static void calc(){
-        Scanner s = new Scanner(System.in);
-        System.out.println("숫자1, 연산자, 숫자2");
-        System.out.println(new Calculator(s.nextInt(), s.next(), s.nextInt()));;
-    }
-    static void bmi(){
-
-    }
-    static void dice(){
-        System.out.println("01 주사위");
-        // 홀수나올때까지 주사위굴려 합하는 프로그래밍
-        // Random random = new Random();
-        Random random = new Random();
-        int result = 0;
-        while(true) {
-            int r = random.nextInt(5)+1;
-            System.out.println(" dice value : "+ r);
-            if(r % 2 != 0) {
-                break;
-            }
-            result += r;
-        }
-        System.out.println(result);
-        // 6면인 주사위를 5회 굴려서 나온 합계를 구하시오.
-        // (int) (Math.random() * 최댓값) + 최솟값
-        result = 0;
-        for(int i=0; i<5; i++) {
-            double d = Math.random();
-            int temp = (int) (d * 6) +1;  // 랜덤으로 (1-6) 정수값
-            System.out.println(temp);
-            result += temp;
-        }
-        System.out.println("Sum : "+result);
-        // 플레이어(Math 랜덤값)와 컴퓨터(Random 랜덤값) 주사위 굴리기를 해 이기면
-        // "Win", 비기면 "Draw.", 지면 "Lose"를 출력하세요.
-        int player=(int)(Math.random()*6)+1;
-        //int p = random(1,6);
-        System.out.println("플레이어 숫자"+player);
-        int com= new Random().nextInt(5)+1;
-        System.out.println("컴퓨터 숫자"+com);
-        String s = "Draw";
-        if(player!=com) s = (player>com) ? "Win" : "Lose";
-        System.out.println(s);
-    }
     static void rps(){
-        System.out.println("02 가위바위보");
-        System.out.println(" ----------- 1 -------------");
-        int a = (int)(Math.random()*3)+1;
-        int b = (int)(Math.random()*3)+1;
-        System.out.println((a == b) ? "Draw" : (b > (a+1)%3) ? "Win":"lose");
-        System.out.println(" ----------- 2 -------------");
-        a = (int)(Math.random()*3)+1;
-        b = (int)(Math.random()*3)+1;
-        System.out.println(a);
-        System.out.println(b);
-        String s = "";
-        if (a == b) s= "Draw";
-		/*
-		 2%3 2 3
-		 3%3 0 1
-		 1%3 1 2
-		 * */
-        else s = (b > (a+1)%3) ? "Win":"lose";
-        System.out.println(s);
-        System.out.println(" ----------- 3 -------------");
-        String[] arr = {"가위", "바위", "보", "Draw", "Win", "Lose"};
-        int[] arr2 = new int[2];
-        for(int i =0 ; i<arr2.length; i++) arr2[i] = (int)(Math.random()*3)+1;
-        int p = arr2[0], c = arr2[1];
-        System.out.printf("Player : %s %d\n",arr[p-1], p);
-        System.out.printf("Computer : %s %d\n",arr[c-1], c);
-        int i = 3;
-        switch(Math.abs(p - c)) {
-            case 1: i = (p > c) ? 5 : 4;
-            case 2: i = (p > c) ? 4 : 5;
-            default: break;
-        }
-        System.out.printf("Player: %s", arr[i]);
+
     }
     static void leap(){
         System.out.println("04 윤년");

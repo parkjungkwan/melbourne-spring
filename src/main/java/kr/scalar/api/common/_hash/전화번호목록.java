@@ -11,5 +11,5 @@ package kr.scalar.api.common._hash;
  * ================================
  * 2022-05-24   parkjungkwan  최초 생성
  */
-public class 전화번호목록 장{
+public class 전화번호목록{
 }

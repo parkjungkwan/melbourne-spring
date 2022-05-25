@@ -11,5 +11,5 @@ package kr.scalar.api.common._sort;
  * ================================
  * 2022-05-24   parkjungkwan  최초 생성
  */
-public class H인덱스 사{
+public class H인덱스{
 }

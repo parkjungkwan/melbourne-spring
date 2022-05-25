@@ -19,7 +19,7 @@ import org.junit.jupiter.api.Test;
  */
 public class 최대최소값 {
     @Builder @Getter @AllArgsConstructor @NoArgsConstructor
-    private static class Solution{
+    public static class Solution{
         private int[] arr;
         private int max, min;
         @Override
@@ -27,7 +27,8 @@ public class 최대최소값 {
             return String.format("최소값: %d, 최대값: %d", min, max);
         }
     }
-    @FunctionalInterface private interface SolutionService {
+    @FunctionalInterface
+    public interface SolutionService {
         Solution solution(Solution s);
     }
     @Test
