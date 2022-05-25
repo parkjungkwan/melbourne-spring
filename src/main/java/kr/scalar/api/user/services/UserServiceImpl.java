@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Optional;
 
 import static kr.scalar.api.common.lambdas.Lambda.longParse;
+import static kr.scalar.api.common.lambdas.Lambda.string;
 
 /**
  * packageName: net.zerotodev.api.services
@@ -41,7 +42,6 @@ public class UserServiceImpl implements UserService{
     private final PasswordEncoder encoder;
     private final AuthProvider provider;
     private final ModelMapper modelMapper;
-
 
     @Override
     public UserDTO login(User user) {
@@ -77,34 +77,33 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Messenger count() {
-        return repository.count();
+        return Messenger.builder().message(string(repository.count())).build();
     }
 
     @Override
     public Messenger update(User user) {
-        return "";
+        return Messenger.builder().build();
     }
 
     @Override
     public Messenger delete(User user) {
         repository.delete(user);
-        return "";
+        return Messenger.builder().message("").build();
     }
 
     @Override
     public Messenger save(User user) {
         String result = "";
-        User o = repository.findByUsername(user.getUsername()).orElse(null);
-        if(o == null){
+        if(repository.findByUsername(user.getUsername()).isEmpty()){
             List<Role> list = new ArrayList<>();
             list.add(Role.USER);
             repository.save(User.builder().password(encoder.encode(user.getPassword()))
                     .roles(list).build());
-            return provider.createToken(user.getUsername(), user.getRoles());
+            result = "SUCCESS";
         }else{
-
+            result = "FAIL";
         }
-
+        return Messenger.builder().message(result).build();
     }
 
     @Override
@@ -126,5 +125,10 @@ public class UserServiceImpl implements UserService{
         // ls = box.findByUserName(ls, name);
         // ls.stream().filter(...)
         return null;
+    }
+
+    @Override
+    public Messenger logout() {
+        return Messenger.builder().build();
     }
 }
