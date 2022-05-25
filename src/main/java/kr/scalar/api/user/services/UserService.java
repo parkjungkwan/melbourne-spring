@@ -1,5 +1,6 @@
 package kr.scalar.api.user.services;
 
+import kr.scalar.api.auth.domains.Messenger;
 import kr.scalar.api.user.domains.User;
 import kr.scalar.api.user.domains.UserDTO;
 import org.springframework.data.domain.Page;
@@ -31,17 +32,17 @@ public interface UserService {
 
     Page<User> findAll(Pageable pageable);
 
-    long count();
+    Messenger count();
 
-    String update(User user);
+    Messenger update(User user);
 
-    String delete(User user);
+    Messenger delete(User user);
 
-    String save(User user);
+    Messenger save(User user);
 
     Optional<User> findById(String userid);
 
-    boolean existsById(String userid);
+    Messenger existsById(String userid);
 
     // custom
 

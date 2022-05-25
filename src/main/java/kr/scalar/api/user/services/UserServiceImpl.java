@@ -1,6 +1,7 @@
 package kr.scalar.api.user.services;
 
 import kr.scalar.api.auth.configs.AuthProvider;
+import kr.scalar.api.auth.domains.Messenger;
 import kr.scalar.api.auth.exception.SecurityRuntimeException;
 import kr.scalar.api.user.domains.Role;
 import kr.scalar.api.user.domains.User;
@@ -16,8 +17,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static kr.scalar.api.common.lambdas.Lambda.longParse;
 
 /**
  * packageName: net.zerotodev.api.services
@@ -72,26 +76,35 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public long count() {
+    public Messenger count() {
         return repository.count();
     }
 
     @Override
-    public String update(User user) {
+    public Messenger update(User user) {
         return "";
     }
 
     @Override
-    public String delete(User user) {
+    public Messenger delete(User user) {
         repository.delete(user);
         return "";
     }
 
     @Override
-    public String save(User user) {
+    public Messenger save(User user) {
+        String result = "";
+        User o = repository.findByUsername(user.getUsername()).orElse(null);
+        if(o == null){
+            List<Role> list = new ArrayList<>();
+            list.add(Role.USER);
+            repository.save(User.builder().password(encoder.encode(user.getPassword()))
+                    .roles(list).build());
+            return provider.createToken(user.getUsername(), user.getRoles());
+        }else{
 
-        repository.save(user);
-        return null;
+        }
+
     }
 
     @Override
@@ -100,8 +113,10 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public boolean existsById(String userid) {
-        return repository.existsById(0L); // userid 타입이 다름
+    public Messenger existsById(String userid) {
+        return repository.existsById(longParse(userid))
+                ? Messenger.builder().message("EXIST").build()
+                : Messenger.builder().message("NOT_EXIST").build(); // userid 타입이 다름
     }
 
     @Override

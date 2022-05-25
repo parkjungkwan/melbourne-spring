@@ -21,12 +21,18 @@ import java.util.function.*;
  */
 public class Lambda {
     public static int integer(String s){
-        int i = Integer.parseInt("900");
         Function<String, Integer> f = Integer::parseInt;
         return f.apply(s);
     }
+    public static long longParse(String s){
+        Function<String, Long> f = Long::parseLong;
+        return f.apply(s);
+    }
+    public static float floatParse(String s){
+        Function<String, Float> f = Float::parseFloat;
+        return f.apply(s);
+    }
     public static String string(Object o){
-        // String s = String.valueOf(o);
         Function<Object, String> f = String::valueOf;
         return f.apply(o);
     }

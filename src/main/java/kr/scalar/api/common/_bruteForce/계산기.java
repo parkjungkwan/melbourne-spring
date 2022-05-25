@@ -21,7 +21,7 @@ import java.util.Scanner;
 public class 계산기 {
     @Data
     @AllArgsConstructor
-    static class Calculator{
+    static class Solution{
 
         private int num1;
         private String opcode;
@@ -39,19 +39,10 @@ public class 계산기 {
         }
     }
     @FunctionalInterface interface SolutionService {
-        최대최소값.Solution solution(최대최소값.Solution s);
+        계산기.Solution solution(계산기.Solution s);
     }
     @Test
     void testSolution(){
-        int[] arr = {3, 1, 9, 5, 10};
-        최대최소값.SolutionService f = e ->{
-            int min = 10;
-            for(int i : e.getArr()){
-                if(i < min) min = i;
-            }
-            return 최대최소값.Solution.builder().min(min).build();
-        };
-        최대최소값.Solution s = 최대최소값.Solution.builder().arr(arr).build();
-        System.out.println(new Calculator(2, "+", 7));;
+
     }
 }

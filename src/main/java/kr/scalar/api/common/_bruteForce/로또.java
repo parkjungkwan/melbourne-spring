@@ -1,5 +1,10 @@
 package kr.scalar.api.common._bruteForce;
 
+import kr.scalar.api.common._greedy.최대최소값;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import org.junit.jupiter.api.Test;
+
 /**
  * packageName: kr.scalar.api.common._bruteForce
  * fileName   : Lotto
@@ -72,4 +77,38 @@ package kr.scalar.api.common._bruteForce;
  * 2022-05-23   parkjungkwan  최초 생성
  */
 public class 로또 {
+    @Data
+    @AllArgsConstructor
+    static class Solution{
+
+        private int num1;
+        private String opcode;
+        private int num2;
+        @Override public String toString(){
+
+            System.out.println("06 로또");
+            String res = "";
+            int[] lotto = new int[6];
+            for (int i = 0; i < 6; i++) {
+                lotto[i] = (int)(Math.random()*45) + 1;
+                for (int j = 0; j < i; j++) {
+                    if (lotto[i] == lotto[j])
+                        i--;
+                    break;
+                }
+            }
+            for (int i = 0; i < 6; i++) {
+                res += String.format(lotto[i] + " ");
+            }
+            System.out.println(res);
+            return "";
+        }
+    }
+    @FunctionalInterface interface SolutionService {
+        로또.Solution solution(로또.Solution s);
+    }
+    @Test
+    void testSolution(){
+
+    }
 }
