@@ -89,9 +89,9 @@ public class UserController {
         @ApiResponse(code=403, message = "승인거절"),
         @ApiResponse(code=422, message = "중복된 ID")
     })
-    public ResponseEntity<Messenger> save(@ApiParam("Join User") @RequestBody User user) {
+    public ResponseEntity<Messenger> save(@ApiParam("Join User") @RequestBody UserDTO user) {
         System.out.println("회원가입 정보: "+user.toString());
-        return ResponseEntity.ok(service.save(modelMapper.map(user, User.class)));
+        return ResponseEntity.ok(service.save(user));
     }
 
     @GetMapping("/findById/{userid}")

@@ -91,13 +91,17 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public Messenger save(User user) {
+    public Messenger save(UserDTO user) {
         System.out.println("서비스로 전달된 회원가입 정보: "+user.toString());
         String result = "";
         if(repository.findByUsername(user.getUsername()).isEmpty()){
             List<Role> list = new ArrayList<>();
             list.add(Role.USER);
-            repository.save(User.builder().regDate(date())
+            repository.save(User.builder()
+                    .username(user.getUsername())
+                    .name(user.getName())
+                    .regDate(user.getRegDate())
+                    .email(user.getEmail())
                     .password(encoder.encode(user.getPassword()))
                     .roles(list).build());
             result = "SUCCESS";
