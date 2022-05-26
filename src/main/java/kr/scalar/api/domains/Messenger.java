@@ -1,4 +1,4 @@
-package kr.scalar.api.auth.domains;
+package kr.scalar.api.domains;
 
 import lombok.Builder;
 import lombok.Getter;

@@ -1,10 +1,12 @@
 package kr.scalar.api.user.controllers;
 
-import kr.scalar.api.auth.domains.Messenger;
+import io.swagger.annotations.*;
+import kr.scalar.api.domains.Messenger;
 import kr.scalar.api.user.domains.UserDTO;
 import lombok.RequiredArgsConstructor;
 import kr.scalar.api.user.domains.User;
 import kr.scalar.api.user.services.UserService;
+import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -25,13 +27,17 @@ import java.util.Optional;
  * ================================
  * 2022-05-03   parkjungkwan  최초 생성
  */
+@CrossOrigin(origins = "*", allowedHeaders = "*")
+@Api(tags = "users")
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
 public class UserController {
 
     private final UserService service;
-
+    private final ModelMapper modelMapper;
+        // @ApiResponse(code=400, message = "Something Wrong"),
+        // @ApiResponse(code=422, message = "유효하지 않은 아이디 / 비밀번호")
     @PostMapping("/login")
     public ResponseEntity<UserDTO> login(@RequestBody User user) {
         return ResponseEntity.ok(service.login(user));
@@ -72,9 +78,17 @@ public class UserController {
         return ResponseEntity.ok(service.delete(user));
     }
 
+
     @PostMapping("/join")
-    public ResponseEntity<Messenger> save(@RequestBody User user) {
-        return ResponseEntity.ok(service.save(user));
+    @ApiOperation(value = "${UserController.join}")
+    @ApiResponses(value={
+        @ApiResponse(code=400, message = "Something Wrong"),
+        @ApiResponse(code=403, message = "승인거절"),
+        @ApiResponse(code=422, message = "중복된 ID")
+    })
+    public ResponseEntity<Messenger> save(@ApiParam("Join User") @RequestBody UserDTO user) {
+        System.out.println("회원가입 정보: "+user.toString());
+        return ResponseEntity.ok(service.save(modelMapper.map(user, User.class)));
     }
 
     @GetMapping("/findById/{userid}")

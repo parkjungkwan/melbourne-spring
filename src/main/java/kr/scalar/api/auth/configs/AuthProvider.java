@@ -4,7 +4,6 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import kr.scalar.api.auth.domains.Auth;
 import kr.scalar.api.user.domains.Role;
 import kr.scalar.api.auth.services.AuthServiceImpl;
 import lombok.RequiredArgsConstructor;

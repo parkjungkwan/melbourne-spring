@@ -1,6 +1,6 @@
 package kr.scalar.api.user.services;
 
-import kr.scalar.api.auth.domains.Messenger;
+import kr.scalar.api.domains.Messenger;
 import kr.scalar.api.user.domains.User;
 import kr.scalar.api.user.domains.UserDTO;
 import org.springframework.data.domain.Page;
