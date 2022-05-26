@@ -24,7 +24,8 @@ import java.util.List;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-
+@ToString
+@Setter
 @Entity
 @Table(name="users")
 public class  User {

@@ -21,8 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-import static kr.scalar.api.common.lambdas.Lambda.longParse;
-import static kr.scalar.api.common.lambdas.Lambda.string;
+import static kr.scalar.api.common.lambdas.Lambda.*;
 
 /**
  * packageName: net.zerotodev.api.services
@@ -93,11 +92,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public Messenger save(User user) {
+        System.out.println("서비스로 전달된 회원가입 정보: "+user.toString());
         String result = "";
         if(repository.findByUsername(user.getUsername()).isEmpty()){
             List<Role> list = new ArrayList<>();
             list.add(Role.USER);
-            repository.save(User.builder().password(encoder.encode(user.getPassword()))
+            repository.save(User.builder().regDate(date())
+                    .password(encoder.encode(user.getPassword()))
                     .roles(list).build());
             result = "SUCCESS";
         }else{
