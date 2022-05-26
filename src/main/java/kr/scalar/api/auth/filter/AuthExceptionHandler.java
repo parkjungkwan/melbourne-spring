@@ -1,6 +1,6 @@
 package kr.scalar.api.auth.filter;
 
-import kr.scalar.api.domains.Messenger;
+import kr.scalar.api.auth.domains.Messenger;
 import kr.scalar.api.auth.exception.ErrorCode;
 import kr.scalar.api.auth.exception.LoginRunnerException;
 import lombok.extern.slf4j.Slf4j;

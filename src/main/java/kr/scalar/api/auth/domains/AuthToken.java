@@ -1,4 +1,4 @@
-package kr.scalar.api.domains;
+package kr.scalar.api.auth.domains;
 
 import io.jsonwebtoken.*;
 import lombok.extern.java.Log;

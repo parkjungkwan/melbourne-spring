@@ -1,7 +1,7 @@
 package kr.scalar.api.user.controllers;
 
 import io.swagger.annotations.*;
-import kr.scalar.api.domains.Messenger;
+import kr.scalar.api.auth.domains.Messenger;
 import kr.scalar.api.user.domains.UserDTO;
 import lombok.RequiredArgsConstructor;
 import kr.scalar.api.user.domains.User;
@@ -36,11 +36,14 @@ public class UserController {
 
     private final UserService service;
     private final ModelMapper modelMapper;
-        // @ApiResponse(code=400, message = "Something Wrong"),
-        // @ApiResponse(code=422, message = "유효하지 않은 아이디 / 비밀번호")
     @PostMapping("/login")
-    public ResponseEntity<UserDTO> login(@RequestBody User user) {
-        return ResponseEntity.ok(service.login(user));
+    @ApiOperation(value ="${UserController.login")
+    @ApiResponses(value = {
+            @ApiResponse(code = 400, message = "Something Wrong"),
+            @ApiResponse(code = 422, message = "유효하지 않은 아이디 / 비밀번호")
+    })
+    public ResponseEntity<UserDTO> login(@ApiParam("Login User") @RequestBody UserDTO user) {
+        return ResponseEntity.ok(service.login(modelMapper.map(user, User.class)));
     }
 
     @GetMapping("/logout")

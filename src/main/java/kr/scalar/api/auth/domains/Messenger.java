@@ -1,4 +1,4 @@
-package kr.scalar.api.domains;
+package kr.scalar.api.auth.domains;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -17,4 +17,5 @@ import lombok.Getter;
 @Getter @Builder
 public class Messenger {
     private String message, code, token;
+    private int status;
 }

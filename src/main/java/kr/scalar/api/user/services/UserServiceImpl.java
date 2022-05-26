@@ -1,7 +1,7 @@
 package kr.scalar.api.user.services;
 
 import kr.scalar.api.auth.configs.AuthProvider;
-import kr.scalar.api.domains.Messenger;
+import kr.scalar.api.auth.domains.Messenger;
 import kr.scalar.api.auth.exception.SecurityRuntimeException;
 import kr.scalar.api.user.domains.Role;
 import kr.scalar.api.user.domains.User;

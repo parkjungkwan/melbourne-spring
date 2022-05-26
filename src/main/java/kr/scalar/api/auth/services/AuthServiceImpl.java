@@ -2,7 +2,7 @@ package kr.scalar.api.auth.services;
 
 import kr.scalar.api.user.domains.User;
 import kr.scalar.api.user.repositories.UserRepository;
-import kr.scalar.api.domains.Auth;
+import kr.scalar.api.auth.domains.Auth;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
